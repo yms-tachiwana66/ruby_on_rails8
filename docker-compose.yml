@@ -2,6 +2,8 @@ services:
   app:
     build: .
     container_name: trial-rails8
+    environment:
+      RAILS_ENV: development
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
