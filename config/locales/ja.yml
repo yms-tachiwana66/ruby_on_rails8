@@ -3,6 +3,10 @@ ja:
   products:
     index:
       title: "製品"
+  store:
+    products:
+      index:
+        title: "Products"
   activerecord:
     attributes:
       user:
