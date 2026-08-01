@@ -17,9 +17,14 @@ Rails.application.routes.draw do
   # post "/products", to: "products#create"
   root "products#index"
   resources :products do
+    resource :wishlist, only: [ :create ], module: :products
     resources :subscribers, only: [ :create ]
   end
+  # resources :wishlists
   resource :unsubscribe, only: [ :show ]
+  resources :wishlists do
+    resources :wishlist_products, only: [ :update, :destroy ], module: :wishlists
+  end
   resource :session
   resources :passwords, param: :token
   resource :sign_up
